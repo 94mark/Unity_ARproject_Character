@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/CharacterControl/CharacterControl.unity
+    guid: 56ff4de26990f484084f18b41e3f6f12
+  m_configObjects:
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 31a7bd2e89e27a0458307e25fc39bdaa, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4aef982df893a0f45900ef0372c6baed, type: 2}
