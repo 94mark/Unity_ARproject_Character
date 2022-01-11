@@ -9,6 +9,8 @@ public class CharacterController : MonoBehaviour
     private ARRaycastManager _raycastManager;
     private Animator _anim;
     protected Transform Destination;
+    private Vector3 _lastPosition;
+    private float _restTime;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +24,16 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount == 0) return;
+        if (Input.touchCount == 0)
+        {
+            _restTime += Time.deltaTime;
+            if ((_restTime < 3)) return;  //애니메이터 Speed 참조
+            _restTime = 0;
+            _anim.SetBool("Rest", true);
+            return;
+        }
+        _restTime = 0;
+        _anim.SetBool("Rest", false);
 
         var hits = new List<ARRaycastHit>();
         _raycastManager.Raycast(TouchHelper.TouchPosition, hits, TrackableType.Planes);
@@ -31,6 +42,14 @@ public class CharacterController : MonoBehaviour
         Rotate();
         MoveTo(hits[0].pose.position);
     }
+
+    void LateUpdate()
+    {
+        var delta = Vector3.Distance(transform.position, _lastPosition);
+        _lastPosition = transform.position;
+        _anim.SetFloat("Speed", delta * 100);
+    }
+
     protected virtual void Rotate()
     {
         var direction = Destination.position - transform.position;

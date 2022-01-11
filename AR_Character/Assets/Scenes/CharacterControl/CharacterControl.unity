@@ -181,7 +181,7 @@ Transform:
   m_GameObject: {fileID: 827271015}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.05, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1703508439}
   m_RootOrder: 0
@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1760703bbd54c04488a8d10600262ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PlanePrefab: {fileID: 8281195889923322589, guid: 7f85cfe94597fcf4e9bbd2013679c6da, type: 3}
+  m_PlanePrefab: {fileID: 8281195889923322589, guid: ccf7ae3e66cb3684ab570c38dc1d6333, type: 3}
   m_DetectionMode: 1
 --- !u!114 &1109591138
 MonoBehaviour:
@@ -419,7 +419,7 @@ MonoBehaviour:
   raycastManager: {fileID: 1109591138}
   placementIndicator: {fileID: 433217990}
   prefab:
-  - {fileID: 7011282067246060525, guid: f31d38e1ab21bfa4480ad0b23e6e59ce, type: 3}
+  - {fileID: 7011282067246060525, guid: 5f85b50df39de5f4cbfcadf3f3b896b6, type: 3}
 --- !u!1 &1133759669
 GameObject:
   m_ObjectHideFlags: 0
